@@ -14,6 +14,7 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.io.FileUtilKt;
 import com.intellij.ui.EditorTextField;
 import com.maple.plugin.data.InputData;
+import com.maple.plugin.utils.CamelCaseUtils;
 import freemarker.cache.ClassTemplateLoader;
 import freemarker.cache.FileTemplateLoader;
 import freemarker.cache.StringTemplateLoader;
@@ -65,8 +66,8 @@ public class PluginMainDialog extends DialogWrapper {
             }
             InputData inputData = new InputData();
             inputData.fileName = input;
-            inputData.upName = CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_UNDERSCORE,input);
-            inputData.lowName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_CAMEL,input);
+            inputData.upName = CamelCaseUtils.convert(input,CamelCaseUtils.CONVERSION_PASCAL_CASE);
+            inputData.lowName = CamelCaseUtils.convert(input,CamelCaseUtils.CONVERSION_LOWER_SNAKE_CASE);
 //            generatorCode(inputData);
             System.out.println("文件：" + inputData.toString());
             code(inputData);
