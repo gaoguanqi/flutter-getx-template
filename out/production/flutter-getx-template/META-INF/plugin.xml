@@ -1,0 +1,42 @@
+<idea-plugin>
+  <id>com.maple.flutter-getx-template.plugin.id</id>
+  <name>Flutter-GetX-Template</name>
+  <version>1.0</version>
+  <vendor email="307590625@qq.com" url="http://www.maple.com">GaoGuanQi</vendor>
+
+  <description><![CDATA[
+      Flutter中使用GetX创建模板代码.<br>
+      <em>创建view文件</em>
+      <em>创建binding文件</em>
+      <em>创建controller文件</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Flutter中使用GetX创建模板代码.<br>
+      <em>创建模板代码文件</em>
+      <em>创建view文件</em>
+      <em>创建binding文件</em>
+      <em>创建controller文件</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="PluginActionId" class="com.maple.plugin.action.PluginAction" text="创建GetX模板" description="自动生成GetX系列文件">
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl 7"/>
+    </action>
+  </actions>
+
+</idea-plugin>
